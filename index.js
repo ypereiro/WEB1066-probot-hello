@@ -15,10 +15,10 @@ module.exports = app => {
 
   // Probe every 5th second.
 
-  // collectDefaultMetrics({register,
-  //  timeout: 5000,
-  //  prefix: 'default_'
-  // })
+  collectDefaultMetrics({register,
+    timeout: 5000,
+    prefix: 'default_'
+  })
 
   // register metrics on startup
   const prom = new client.Summary({

@@ -29,20 +29,18 @@ describe('My Probot app', () => {
 
   test('process check_run completed event', async () => {
       // Simulates delivery of an check_run completed event  webhook
-      await app.receive({
-    name: 'check_run.completed',
-    payload: checkRunCompletedPayload
+    await app.receive({
+      name: 'check_run.completed',
+      payload: checkRunCompletedPayload
+    })
   })
-})
 
-
-test('creates a comment when an issue is opened', async () => {
+  test('creates a comment when an issue is opened', async () => {
     // Simulates delivery of an issues.opened webhook
     await app.receive({
       name: 'issues.opened',
       payload: issuesOpenedPayload
     })
-
     // This test passes if the code in your index.js file calls `context.github.issues.createComment`
     expect(github.issues.createComment).toHaveBeenCalled()
   })
