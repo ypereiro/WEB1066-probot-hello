@@ -27,7 +27,7 @@ describe('My Probot app', () => {
     app.auth = () => Promise.resolve(github)
   })
 
-  test('creates a comment when an issue is opened', async () => {
+test('creates a comment when an issue is opened', async () => {
     // Simulates delivery of an issues.opened webhook
     await app.receive({
       name: 'issues.opened',
@@ -39,7 +39,7 @@ describe('My Probot app', () => {
   })
 })
 
-  test('process check_run completed event', async () => {
+test('process check_run completed event', async () => {
     // Simulates delivery of an check_run completed event  webhook
     await app.receive({
     name: 'check_run.completed',
