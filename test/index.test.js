@@ -3,6 +3,7 @@ const { Application } = require('probot')
 const myProbotApp = require('..')
 
 const issuesOpenedPayload = require('./fixtures/issues.opened.json')
+const checkRunCompletedPayload = require('./fixtures/check_run.completed.json')
 
 test('that we can run tests', () => {
   // your real tests go here
