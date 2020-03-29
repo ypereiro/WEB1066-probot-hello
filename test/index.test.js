@@ -27,6 +27,15 @@ describe('My Probot app', () => {
     app.auth = () => Promise.resolve(github)
   })
 
+  test('process check_run completed event', async () => {
+      // Simulates delivery of an check_run completed event  webhook
+      await app.receive({
+    name: 'check_run.completed',
+    payload: checkRunCompletedPayload
+  })
+})
+
+
 test('creates a comment when an issue is opened', async () => {
     // Simulates delivery of an issues.opened webhook
     await app.receive({
@@ -39,12 +48,5 @@ test('creates a comment when an issue is opened', async () => {
   })
 })
 
-test('process check_run completed event', async () => {
-    // Simulates delivery of an check_run completed event  webhook
-    await app.receive({
-    name: 'check_run.completed',
-    payload: checkRunCompletedPayload
-  })
-})
 // For more information about testing with Jest see:
 // https://facebook.github.io/jest/
