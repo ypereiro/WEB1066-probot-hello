@@ -3,6 +3,7 @@
 > A GitHub App built with [Probot](https://github.com/probot/probot) that A Probot app
 
 ## Setup
+Test to commit an see graphs in grafana
 
 ```sh
 # Install dependencies
